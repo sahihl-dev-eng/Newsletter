@@ -45,13 +45,13 @@ const request=https.request(url,options,function(response){
     res.sendFile(__dirname +"/failure.html")
 
   }
-}
+
 // response.on("data", function(data){
 //   console.log(JSON.parse(data))
 // })
 });
-// request.write(jsondata);
-// request.end();
+request.write(jsondata);
+request.end();
 });
 
 app.post("/failure",function(req,res){
