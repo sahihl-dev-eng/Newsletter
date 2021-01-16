@@ -39,9 +39,6 @@ const options={
 const request=https.request(url,options,function(response){
   if (response.statusCode=== 200){
     res.sendFile(__dirname +"/success.html")
-    request.write(jsondata);
-    request.end();
-
   }
   else
   {
@@ -55,6 +52,8 @@ response.on("data", function(data){
 
 })
 });
+request.write(jsondata);
+request.end();
 });
 
 
